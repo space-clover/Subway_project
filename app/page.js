@@ -3,8 +3,10 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import Welcome_prom from './Components/welcome_prom'
 import DraggableSlider from './Components/Slider_page'
+import Nav_section from './Components/Nav_section';
+import Shoplist from './Components/Shoplist';
 import axios from 'axios';
-export default function Home() {
+export default function Home( { }) {
   const [items, setItems] = useState([]);
   useEffect(() => {
     axios.get('http://localhost:5000/items') 
@@ -18,9 +20,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen bg-pale-snow flex-col items-center  p-8">
-      <Welcome_prom/>
-      <DraggableSlider items={items} />
+    <main className="flex min-h-screen relative bg-pale-snow ">
+      <Nav_section/>
+      <section className='flex flex-col w-full px-8 py-3'> 
+        <Welcome_prom/>
+        <DraggableSlider items={items} />
+        <Shoplist/>
+      </section>
+
+
     </main>
   )
 }

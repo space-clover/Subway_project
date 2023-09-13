@@ -4,10 +4,22 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import axios from 'axios';
 import { AiOutlineShoppingCart, IconName } from "react-icons/ai";
+const { motion } = require("framer-motion");
 
 
 class DraggableSlider extends Component {
+    addToCart(item) {
+        axios.post('http://localhost:5000/lista', item)
+            .then((response) => {
+            console.log('Elemento agregado al carrito:', response.data);
+            })
+            .catch((error) => {
+                console.error('Error al agregar al carrito:', error);
+            });
+        }
+    
 render() {
     const { items } = this.props;
 
@@ -20,12 +32,16 @@ render() {
     };
 
         return (
-        <div className=" w-full">
+        <motion.div className=" w-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}>
             <Slider {...sliderSettings}>
             {items.map((item, index) => (
                 <ul key={index} className="p-6 cursor-grab active:cursor-grabbing">
                     <li className="bg-beige  border-2 relative border-deep-blue text-deep-blue pt-12 justify-around flex flex-col items-center h-60vh xl:h-65vh w-full">
-                        <AiOutlineShoppingCart className='absolute text-2xl transition duration-500 hover:text-midnight-purple z-30 cursor-pointer text-fiery-red top-2 right-3'/>
+                        <AiOutlineShoppingCart className='absolute text-3xl transition duration-500 hover:text-midnight-purple z-30 cursor-pointer text-fiery-red top-2 right-3'
+                        onClick={() => this.addToCart(item)}/>
                         <div className='flex items-end justify-center h-40'>                       
                         <Image
                         src={item.image}
@@ -43,9 +59,10 @@ render() {
                 </ul>
             ))}
             </Slider>
-        </div>
+        </motion.div>
         );
     }
 }
 
 export default DraggableSlider;
+
