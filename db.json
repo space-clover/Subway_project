@@ -1,0 +1,34 @@
+{
+    "items": [
+        {
+            "name": "CACTUS",
+            "image": "/./Sneaker_one.jpeg", 
+            "price": "$240 USD",
+            "discount": "$144 USD"
+        },
+        {
+            "name": "THE EYE",
+            "image": "/./Sneaker_two.jpeg", 
+            "price": "$240 USD",
+            "discount": "$144 USD"
+        },
+        {
+            "name": "DURAN",
+            "image": "/./Sneaker_three.jpeg", 
+            "price": "$240 USD",
+            "discount": "$144 USD"
+        },
+        {
+            "name": "THE CODE",
+            "image": "/./Sneaker_four.jpeg", 
+            "price": "$240 USD",
+            "discount": "$144 USD"
+        },
+        {
+            "name": "CARNERA",
+            "image": "/./Sneaker_five.jpeg", 
+            "price": "$240 USD",
+            "discount": "$144 USD"
+        }
+    ]
+}
