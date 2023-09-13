@@ -57,7 +57,8 @@ render() {
                         <div className='flex flex-col items-center justify-around mb-5'>
                             <p className='text-sm font-semibold line-through' >{item.price}</p>
                             <p className='text-xl font-semibold'>{item.discount}</p>
-                        </div>     
+                        </div>
+                    <input type="text" placeholder='New Name'  className='w-full p-2 text-deep-blue font-bold h-8'/>
                     </li>
                 </ul>
             ))}

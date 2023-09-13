@@ -2,22 +2,65 @@
   "history": [
     [
       {
-        "name": "THE CODE",
-        "image": "/./Sneaker_four.jpeg",
+        "name": "THE EYE",
+        "image": "/./Sneaker_two.jpeg",
         "price": "$240 USD",
         "discount": "$144 USD",
         "id": 1
       },
       {
-        "name": "THE CODE",
-        "image": "/./Sneaker_four.jpeg",
+        "name": "DURAN",
+        "image": "/./Sneaker_three.jpeg",
         "price": "$240 USD",
         "discount": "$144 USD",
         "id": 2
+      },
+      {
+        "name": "CACTUS",
+        "image": "/./Sneaker_one.jpeg",
+        "price": "$240 USD",
+        "discount": "$144 USD",
+        "id": 3
       }
     ]
   ],
-  "lista": [],
+  "lista": [
+    {
+      "name": "CACTUS",
+      "image": "/./Sneaker_one.jpeg",
+      "price": "$240 USD",
+      "discount": "$144 USD",
+      "id": 1
+    },
+    {
+      "name": "CACTUS",
+      "image": "/./Sneaker_one.jpeg",
+      "price": "$240 USD",
+      "discount": "$144 USD",
+      "id": 2
+    },
+    {
+      "name": "CACTUS",
+      "image": "/./Sneaker_one.jpeg",
+      "price": "$240 USD",
+      "discount": "$144 USD",
+      "id": 3
+    },
+    {
+      "name": "THE EYE",
+      "image": "/./Sneaker_two.jpeg",
+      "price": "$240 USD",
+      "discount": "$144 USD",
+      "id": 4
+    },
+    {
+      "name": "THE EYE",
+      "image": "/./Sneaker_two.jpeg",
+      "price": "$240 USD",
+      "discount": "$144 USD",
+      "id": 5
+    }
+  ],
   "items": [
     {
       "name": "CACTUS",

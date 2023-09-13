@@ -11,25 +11,28 @@ const Nav_section = ({ showSliderPage, showShopList, showPastList }) => {
       transition={{ duration: 1 }}
     >
         <h1 className='text-xl font-bold -rotate-90'>SUMMER SPRING</h1>
-        <ul className='flex font-bold flex-col text-light text-md h-30 justify-around'>
-            <a
-            className='cursor-pointer transition duration-500 hover:text-fiery-red'
-            onClick={showSliderPage}
-            >
-            <AiFillHome className='text-2xl'/>
-            </a>
-            <a
-            className='cursor-pointer transition duration-500 hover:text-fiery-red'
-            onClick={showShopList}
-            >
-            <AiOutlineShoppingCart className='text-2xl'/>
-            </a>
-            <a
-            className='cursor-pointer  transition duration-500 hover:text-fiery-red'
-            onClick={showPastList}
-            >
-            <AiOutlineHistory className='text-2xl'/>
-            </a>
+        <ul className='flex font-bold flex-col items-start text-light text-md h-30 justify-around'>
+        <a  className="group flex flex-col items-center cursor-pointer" onClick={showSliderPage}>
+            <AiFillHome  className="cursor-pointer  group-hover:text-fiery-red text-3xl group-hover:text-opacity-100 group-hover:scale-100 transform scale-90 transition-transform duration-300" />
+            <div  className="absolute hidden text-center group-hover:block bg-deep-blue cursor-pointer  bg-opacity-60 text-pale-snow py-2 px-1.5 
+                rounded whitespace-nowrap transition-opacity duration-300  mt-9">
+                Home
+            </div>
+        </a>
+        <a  className="group flex flex-col items-center cursor-pointer" onClick={showShopList}>
+            <AiOutlineShoppingCart className="cursor-pointer  group-hover:text-fiery-red text-3xl group-hover:text-opacity-100 group-hover:scale-100 transform scale-90 transition-transform duration-300" />
+            <div className="absolute hidden text-center group-hover:block bg-deep-blue  bg-opacity-60 text-pale-snow py-2 px-1.5 
+                rounded whitespace-nowrap transition-opacity duration-300  mt-9">
+                My cart
+            </div>
+        </a>
+        <a  className="group flex flex-col items-center cursor-pointer" onClick={showPastList}>
+            <AiOutlineHistory className="cursor-pointer  group-hover:text-fiery-red text-3xl group-hover:text-opacity-100 group-hover:scale-100 transform scale-90 transition-transform duration-300" />
+            <div className="absolute hidden text-center group-hover:block bg-deep-blue  bg-opacity-60 text-pale-snow py-2 px-1.5 
+                rounded whitespace-nowrap transition-opacity duration-300  mt-9">
+                My buys
+            </div>
+        </a>
         </ul>
         </motion.nav>
     );
