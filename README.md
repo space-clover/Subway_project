@@ -6,11 +6,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. Instala las dependencias. (npm install)
 3. abre el json server (npm run apif)
 4. ejecuta el servidor
-   ##npm run dev
+   ## npm run dev
   # o
-  ##yarn dev
+  ## yarn dev
   # o
-  ##pnpm dev
+  ## pnpm dev
 
 
 Abre http://localhost:3000 en tu navegador para ver el resultado.
