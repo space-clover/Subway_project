@@ -5,7 +5,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import axios from 'axios';
-import { AiOutlineShoppingCart, IconName } from "react-icons/ai";
+import { AiOutlineShoppingCart,} from "react-icons/ai";
+import { IconName, LuPencilRuler } from "react-icons/lu";
 const { motion } = require("framer-motion");
 
 
@@ -40,6 +41,8 @@ render() {
             {items.map((item, index) => (
                 <ul key={index} className="p-6 cursor-grab active:cursor-grabbing">
                     <li className="bg-beige  border-2 relative border-deep-blue text-deep-blue pt-12 justify-around flex flex-col items-center h-60vh xl:h-65vh w-full">
+                        <LuPencilRuler className='absolute text-3xl transition duration-500 hover:text-midnight-purple z-30 cursor-pointer text-fiery-red top-2 left-2'
+                        onClick={() => this.change(item)}/>
                         <AiOutlineShoppingCart className='absolute text-3xl transition duration-500 hover:text-midnight-purple z-30 cursor-pointer text-fiery-red top-2 right-3'
                         onClick={() => this.addToCart(item)}/>
                         <div className='flex items-end justify-center h-40'>                       

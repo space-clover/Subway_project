@@ -31,11 +31,13 @@ const Shoplist = () => {
         return axios.delete(`http://localhost:5000/lista/${itemId}`);
     };
 
+    
     const checkout = () => {
         axios.post('http://localhost:5000/history', items)
             .then((response) => {
                 console.log('Datos enviados al historial con éxito:', response.data);
                 const deletePromises = items.map((item) => deleteItemFromDatabase(item.id));
+
                 Promise.all(deletePromises)
                     .then((deleteResponses) => {
                         console.log('Elementos eliminados de la base de datos con éxito:', deleteResponses);
@@ -48,17 +50,19 @@ const Shoplist = () => {
             .catch((error) => {
                 console.error('Error al agregar al historial:', error);
             });
-        };
+    };
     return (
         <section className='flex'>
-        <div className='w-3/6'>
+        <motion.div className='w-3/6'
+        nitial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}>
             <h1 className='text-6xl text-fiery-red font-bold'>Estas son las compras que has realizado</h1>
             <p className='text-2xl text-deep-blue font-bold mt-2'>Te vas o quieres seguir navegando?</p>
-            <div className='flex justify-around mt-2'>
-                <button className='py-2 px-3 bg-deep-blue rounded-xl text-pale-snow' >Quiero seguir navegando</button>
+            <div className='flex justify-end pr-4 mt-2'>
                 <button className='py-2 px-3  bg-bright-orange rounded-xl text-pale-snow' onClick={checkout}>Pago mis compras</button>
             </div>
-        </div>
+        </motion.div>
         <motion.div className=" w-2/5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
